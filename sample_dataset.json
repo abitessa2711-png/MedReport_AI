@@ -1,0 +1,282 @@
+{
+  "dataset_info": {
+    "name": "MedReport AI — Structured Lab Report Dataset",
+    "description": "This dataset is dynamically generated from user-uploaded medical lab reports. Each report undergoes OCR extraction, regex-based parsing, numerical analysis, and AI-powered bilingual summarization.",
+    "source": "Real uploaded medical lab reports (Image/PDF) processed through Tesseract OCR + Custom Parser",
+    "format": "Structured JSON extracted from OCR text using regex-based rule engine",
+    "database": "SQLite / MySQL (SQLAlchemy ORM)",
+    "tables": ["users", "reports", "extracted_results", "analysis_results"]
+  },
+
+  "sample_extracted_results": [
+    {
+      "id": 1,
+      "report_id": 1,
+      "test_name": "Hemoglobin",
+      "value": "13.5",
+      "numeric_value": 13.5,
+      "unit": "g/dL",
+      "reference_range": "12.0 - 15.5",
+      "status": "Normal",
+      "was_corrected": false
+    },
+    {
+      "id": 2,
+      "report_id": 1,
+      "test_name": "Fasting Blood Sugar",
+      "value": "110",
+      "numeric_value": 110.0,
+      "unit": "mg/dL",
+      "reference_range": "70 - 99",
+      "status": "High",
+      "was_corrected": false
+    },
+    {
+      "id": 3,
+      "report_id": 1,
+      "test_name": "Total Cholesterol",
+      "value": "215",
+      "numeric_value": 215.0,
+      "unit": "mg/dL",
+      "reference_range": "120 - 200",
+      "status": "High",
+      "was_corrected": false
+    },
+    {
+      "id": 4,
+      "report_id": 1,
+      "test_name": "Serum Creatinine",
+      "value": "0.9",
+      "numeric_value": 0.9,
+      "unit": "mg/dL",
+      "reference_range": "0.6 - 1.2",
+      "status": "Normal",
+      "was_corrected": false
+    },
+    {
+      "id": 5,
+      "report_id": 1,
+      "test_name": "WBC Count",
+      "value": "6800",
+      "numeric_value": 6800.0,
+      "unit": "cells/cumm",
+      "reference_range": "4000 - 11000",
+      "status": "Normal",
+      "was_corrected": false
+    },
+    {
+      "id": 6,
+      "report_id": 1,
+      "test_name": "Platelet Count",
+      "value": "250000",
+      "numeric_value": 250000.0,
+      "unit": "/cumm",
+      "reference_range": "150000 - 450000",
+      "status": "Normal",
+      "was_corrected": false
+    },
+    {
+      "id": 7,
+      "report_id": 1,
+      "test_name": "SGPT (ALT)",
+      "value": "42",
+      "numeric_value": 42.0,
+      "unit": "U/L",
+      "reference_range": "7 - 56",
+      "status": "Normal",
+      "was_corrected": false
+    },
+    {
+      "id": 8,
+      "report_id": 1,
+      "test_name": "SGOT (AST)",
+      "value": "38",
+      "numeric_value": 38.0,
+      "unit": "U/L",
+      "reference_range": "10 - 40",
+      "status": "Normal",
+      "was_corrected": false
+    },
+    {
+      "id": 9,
+      "report_id": 1,
+      "test_name": "Urea",
+      "value": "45",
+      "numeric_value": 45.0,
+      "unit": "mg/dL",
+      "reference_range": "15 - 40",
+      "status": "High",
+      "was_corrected": false
+    },
+    {
+      "id": 10,
+      "report_id": 1,
+      "test_name": "Uric Acid",
+      "value": "5.2",
+      "numeric_value": 5.2,
+      "unit": "mg/dL",
+      "reference_range": "2.4 - 6.0",
+      "status": "Normal",
+      "was_corrected": false
+    },
+    {
+      "id": 11,
+      "report_id": 2,
+      "test_name": "TSH",
+      "value": "8.5",
+      "numeric_value": 8.5,
+      "unit": "mIU/L",
+      "reference_range": "0.4 - 4.0",
+      "status": "High",
+      "was_corrected": false
+    },
+    {
+      "id": 12,
+      "report_id": 2,
+      "test_name": "T3",
+      "value": "1.2",
+      "numeric_value": 1.2,
+      "unit": "ng/mL",
+      "reference_range": "0.8 - 2.0",
+      "status": "Normal",
+      "was_corrected": false
+    },
+    {
+      "id": 13,
+      "report_id": 2,
+      "test_name": "T4",
+      "value": "6.8",
+      "numeric_value": 6.8,
+      "unit": "µg/dL",
+      "reference_range": "5.1 - 14.1",
+      "status": "Normal",
+      "was_corrected": false
+    },
+    {
+      "id": 14,
+      "report_id": 2,
+      "test_name": "Vitamin D",
+      "value": "18",
+      "numeric_value": 18.0,
+      "unit": "ng/mL",
+      "reference_range": "30 - 100",
+      "status": "Low",
+      "was_corrected": false
+    },
+    {
+      "id": 15,
+      "report_id": 2,
+      "test_name": "Vitamin B12",
+      "value": "350",
+      "numeric_value": 350.0,
+      "unit": "pg/mL",
+      "reference_range": "200 - 900",
+      "status": "Normal",
+      "was_corrected": false
+    },
+    {
+      "id": 16,
+      "report_id": 3,
+      "test_name": "HbA1c",
+      "value": "6.8",
+      "numeric_value": 6.8,
+      "unit": "%",
+      "reference_range": "4.0 - 5.6",
+      "status": "High",
+      "was_corrected": false
+    },
+    {
+      "id": 17,
+      "report_id": 3,
+      "test_name": "HDL Cholesterol",
+      "value": "38",
+      "numeric_value": 38.0,
+      "unit": "mg/dL",
+      "reference_range": "40 - 60",
+      "status": "Low",
+      "was_corrected": false
+    },
+    {
+      "id": 18,
+      "report_id": 3,
+      "test_name": "LDL Cholesterol",
+      "value": "145",
+      "numeric_value": 145.0,
+      "unit": "mg/dL",
+      "reference_range": "0 - 100",
+      "status": "High",
+      "was_corrected": false
+    },
+    {
+      "id": 19,
+      "report_id": 3,
+      "test_name": "Triglycerides",
+      "value": "180",
+      "numeric_value": 180.0,
+      "unit": "mg/dL",
+      "reference_range": "0 - 150",
+      "status": "High",
+      "was_corrected": false
+    },
+    {
+      "id": 20,
+      "report_id": 3,
+      "test_name": "RBC Count",
+      "value": "4.8",
+      "numeric_value": 4.8,
+      "unit": "million/cumm",
+      "reference_range": "4.5 - 5.5",
+      "status": "Normal",
+      "was_corrected": false
+    }
+  ],
+
+  "sample_analysis_output": {
+    "report_id": 1,
+    "overall_summary_en": "Analysis complete for 10 test parameters. Found 3 abnormal values (Fasting Blood Sugar - High, Total Cholesterol - High, Urea - High) and 7 normal values.",
+    "overall_summary_ta": "மொத்தம் 10 பரிசோதனை அளவீடுகள் ஆய்வு செய்யப்பட்டன. 3 அளவீடுகள் மாறுபட்டுள்ளன (Fasting Blood Sugar - அதிகம், Total Cholesterol - அதிகம், Urea - அதிகம்), 7 அளவீடுகள் இயல்பாக உள்ளன.",
+    "abnormal_findings_en": "Fasting Blood Sugar: 110 mg/dL (High - above reference range of 70-99), Total Cholesterol: 215 mg/dL (High - above reference range of 120-200), Urea: 45 mg/dL (High - above reference range of 15-40)",
+    "abnormal_findings_ta": "Fasting Blood Sugar: 110 mg/dL (அதிகம் - reference range 70-99 மேல் உள்ளது), Total Cholesterol: 215 mg/dL (அதிகம் - reference range 120-200 மேல் உள்ளது), Urea: 45 mg/dL (அதிகம் - reference range 15-40 மேல் உள்ளது)",
+    "normal_findings_en": "Hemoglobin: 13.5 g/dL, Serum Creatinine: 0.9 mg/dL, WBC Count: 6800 cells/cumm, Platelet Count: 250000 /cumm, SGPT: 42 U/L, SGOT: 38 U/L, Uric Acid: 5.2 mg/dL",
+    "normal_findings_ta": "Hemoglobin: 13.5 g/dL, Serum Creatinine: 0.9 mg/dL, WBC Count: 6800 cells/cumm, Platelet Count: 250000 /cumm, SGPT: 42 U/L, SGOT: 38 U/L, Uric Acid: 5.2 mg/dL",
+    "attention_points_en": "Please review abnormal findings (Fasting Blood Sugar, Total Cholesterol, Urea) with a registered medical doctor.",
+    "attention_points_ta": "மாறுபட்ட அளவீடுகளை (Fasting Blood Sugar, Total Cholesterol, Urea) உங்கள் மருத்துவரிடம் காண்பித்து ஆலோசனை பெறவும்.",
+    "lifestyle_en": "Focus on a balanced diet rich in leafy greens, whole grains, and lean proteins. Stay well-hydrated with 2-3 liters of water daily, reduce excess refined sugars and salt, and engage in 30 minutes of daily light physical activity.",
+    "lifestyle_ta": "கீரைகள், தானியங்கள் மற்றும் சத்தான உணவுகளை உட்கொள்ளுங்கள். தினமும் 2-3 லிட்டர் தண்ணீர் குடியுங்கள், சர்க்கரை மற்றும் உப்பைக் குறைத்து, 30 நிமிடங்கள் நடைபயிற்சி செய்யுங்கள்.",
+    "prevention_en": "Maintain annual wellness checkups, monitor hydration and restful sleep (7-8 hours daily), and prepare a written list of questions regarding your lab values to review during your next doctor consultation.",
+    "prevention_ta": "ஆண்டுதோறும் உடல் பரிசோதனை செய்து கொள்ளுங்கள், தினமும் 7-8 மணிநேரம் தூங்குங்கள், உங்கள் பரிசோதனை முடிவுகள் பற்றி மருத்துவரிடம் கேட்க வேண்டிய கேள்விகளை குறித்து வைத்துக்கொள்ளுங்கள்.",
+    "ai_provider": "anthropic",
+    "ai_model": "claude-sonnet-4-6"
+  },
+
+  "supported_test_categories": [
+    {
+      "category": "Complete Blood Count (CBC)",
+      "tests": ["Hemoglobin", "WBC Count", "RBC Count", "Platelet Count", "Hematocrit", "MCV", "MCH", "MCHC"]
+    },
+    {
+      "category": "Blood Sugar / Diabetes",
+      "tests": ["Fasting Blood Sugar", "Post-Prandial Blood Sugar", "HbA1c", "Random Blood Sugar"]
+    },
+    {
+      "category": "Lipid Profile",
+      "tests": ["Total Cholesterol", "HDL Cholesterol", "LDL Cholesterol", "Triglycerides", "VLDL"]
+    },
+    {
+      "category": "Liver Function Tests (LFT)",
+      "tests": ["SGPT (ALT)", "SGOT (AST)", "Alkaline Phosphatase", "Total Bilirubin", "Direct Bilirubin", "Total Protein", "Albumin"]
+    },
+    {
+      "category": "Kidney Function Tests (KFT/RFT)",
+      "tests": ["Serum Creatinine", "Urea", "BUN", "Uric Acid", "Sodium", "Potassium", "Chloride"]
+    },
+    {
+      "category": "Thyroid Profile",
+      "tests": ["TSH", "T3", "T4", "Free T3", "Free T4"]
+    },
+    {
+      "category": "Vitamins & Minerals",
+      "tests": ["Vitamin D", "Vitamin B12", "Iron", "Calcium", "Ferritin"]
+    }
+  ]
+}
